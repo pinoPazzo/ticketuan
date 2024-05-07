@@ -32,7 +32,7 @@ CREATE TABLE eventi(
 DROP TABLE IF EXISTS biglietti;
 CREATE TABLE biglietti(
                           IdBiglietto int(11) NOT NULL AUTO_INCREMENT,
-                          Pagato double NOT NULL,
+                          ImportoPagato double NOT NULL,
                           Posto VARCHAR(4) NOT NULL,
                           DataAcquisto DATE NOT NULL,
                           IdC int(11) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE biglietti(
                           PRIMARY KEY (IdBiglietto),
                           FOREIGN KEY (IdC) REFERENCES clienti(IdCliente),
                           FOREIGN KEY (IdE) REFERENCES eventi(IdEvento),
-                          FOREIGN KEY (Pagato) REFERENCES eventi(Costo)
+                          FOREIGN KEY (ImportoPagato) REFERENCES eventi(Costo)
 );
 
 INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categoria) VALUES ('Marracash', 'Marra Stadi 25', 'Stadio San Siro', 'Milano', '2025-06-25', 59, 'Concerto'),
