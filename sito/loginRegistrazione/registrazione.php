@@ -15,7 +15,7 @@
                 <div class="row g-0">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form>
+                      <form method="post">
       
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -25,44 +25,45 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crea il tuo account</h5>
       
                         <div data-mdb-input-init class="form-outline mb-4">
-                          <input type="email" id="form2Example17" class="form-control form-control-lg" required/>
+                          <input type="email" id="form2Example17" class="form-control form-control-lg" name="email" required/>
                           <label class="form-label" for="form2Example17">Indirizzo email</label>
                         </div>
       
                         <div data-mdb-input-init class="form-outline mb-4">
-                          <input type="password" id="form2Example27" class="form-control form-control-lg" name="pass" id="pass" required/>
+                          <input type="password" id="form2Example27" class="form-control form-control-lg" name="pass" required/>
                           <label class="form-label" for="form2Example27">Password</label>
-                            <p id="passError"></p>
+                            <p id="passError" class="error text-danger"></p>
                         </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" name="nome" required/>
                               <label class="form-label" for="form2Example17">Nome</label>
                           </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" name="cognome" required/>
                               <label class="form-label" for="form2Example17">Cognome</label>
                           </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" name="citta" required/>
                               <label class="form-label" for="form2Example17">Città</label>
                           </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" name="via" required/>
                               <label class="form-label" for="form2Example17">Via</label>
                           </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" name="civico" required/>
                               <label class="form-label" for="form2Example17">Civico</label>
                           </div>
 
                           <div data-mdb-input-init class="form-outline mb-4">
-                              <input type="date" id="form2Example17" class="form-control form-control-lg" required/>
+                              <input type="date" id="form2Example17" class="form-control form-control-lg" name="data" required/>
                               <label class="form-label" for="form2Example17">Data di nascità</label>
+                              <p id="dataError" class="error text-danger"></p>
                           </div>
                           Al fine di consentire la Sua iscrizione nel nostro "Sito", nonché l’accesso ai servizi erogati attraverso il medesimo Sito e l’esatta esecuzione degli stessi, Ticketuan S.p.A., con sede in Castellanza (VA), Via Azzimonti n. 25, in qualità di Titolare, sottoporrà a trattamento i dati personali che la riguardano, ai sensi delle previsioni del Regolamento UE 2016/679, Regolamento Generale in materia di Protezione dei Dati Personali (cd. “RGPD”) e del D.Lgs. 30 giugno 2003, n. 196 (cd. "Codice della Privacy"), ove applicabile. I Suoi dati personali saranno trattati per le finalità, nei modi e secondo i termini indicati dal art. 13 RGPD
 
