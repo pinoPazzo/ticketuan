@@ -25,17 +25,65 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crea il tuo account</h5>
       
                         <div data-mdb-input-init class="form-outline mb-4">
-                          <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                          <input type="email" id="form2Example17" class="form-control form-control-lg" required/>
                           <label class="form-label" for="form2Example17">Indirizzo email</label>
                         </div>
       
                         <div data-mdb-input-init class="form-outline mb-4">
-                          <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                          <input type="password" id="form2Example27" class="form-control form-control-lg" name="pass" id="pass" required/>
                           <label class="form-label" for="form2Example27">Password</label>
+                            <p id="passError"></p>
                         </div>
 
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Nome</label>
+                          </div>
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Cognome</label>
+                          </div>
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Città</label>
+                          </div>
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Via</label>
+                          </div>
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="text" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Civico</label>
+                          </div>
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input type="date" id="form2Example17" class="form-control form-control-lg" required/>
+                              <label class="form-label" for="form2Example17">Data di nascità</label>
+                          </div>
+                          Al fine di consentire la Sua iscrizione nel nostro "Sito", nonché l’accesso ai servizi erogati attraverso il medesimo Sito e l’esatta esecuzione degli stessi, Ticketuan S.p.A., con sede in Castellanza (VA), Via Azzimonti n. 25, in qualità di Titolare, sottoporrà a trattamento i dati personali che la riguardano, ai sensi delle previsioni del Regolamento UE 2016/679, Regolamento Generale in materia di Protezione dei Dati Personali (cd. “RGPD”) e del D.Lgs. 30 giugno 2003, n. 196 (cd. "Codice della Privacy"), ove applicabile. I Suoi dati personali saranno trattati per le finalità, nei modi e secondo i termini indicati dal art. 13 RGPD
+
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">Accetto</label>
+                              <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">Non accetto</label>
+                          </div>
+                          Al trattamento dei miei dati, come elencati nell’informativa, da parte di Ticketuan per l'invio di materiale pubblicitario relativo a prodotti e servizi propri o di terzi per email, SMS o altri sistemi automatizzati e per posta (marketing).
+
+                          all'elaborazione da parte di Ticketuan delle mie scelte e abitudini di acquisto sul Sito per l'invio di materiale pubblicitario relativo a prodotti e servizi propri o di terzi di mio specifico interesse per email, SMS o altri sistemi automatizzati e per posta (profilazione).
+                          <div data-mdb-input-init class="form-outline mb-4">
+                              <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">Accetto</label>
+                              <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1">
+                              <label class="form-check-label" for="flexRadioDefault1">Non accetto</label>
+                          </div>
+
                         <div class="pt-1 mb-4">
-                          <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button">registrati</button>
+                          <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">registrati</button>
                         </div>
                       </form>
       
@@ -45,5 +93,6 @@
             </div>
           </div>
         </div>
+        <script src="validazioneRegistrazione.js"></script>
 </body>
 </html>
