@@ -1,4 +1,4 @@
-<?php require_once "navBar.html"?>
+<?php require_once "navBar.php"?>
 <main class="d-flex ms-3 mt-3 flex-grow-1">
     <div class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
