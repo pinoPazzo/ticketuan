@@ -11,7 +11,7 @@ CREATE TABLE clienti(
                         DataNascita DATE NOT NULL,
                         Residenza VARCHAR(30) NOT NULL,
                         Mail VARCHAR(40) NOT NULL,
-                        Password VARCHAR(30) NOT NULL,
+                        Password TEXT NOT NULL,
                         PRIMARY KEY (IdCliente)
 );
 
@@ -53,3 +53,5 @@ INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categor
                                                                                            ('Awed, Dadda, Dose', 'Esperienze D.M.', 'Teatro Ariston', 'Sanremo', '2024-10-04 21:00:00', 26, 'Teatro'),
                                                                                            (NULL, 'Gran Premio d\'Italia 2024', 'Autodromo Internazionale di Mugello', 'Firenze', '2024-06-01 00:01:00', 75, 'Sport'),
                                                                                            (NULL, 'Davis Cup', 'Unipol Arena', 'Casalecchio di Reno', '2024-09-10 15:00:00', 44, 'Sport');
+
+SELECT * FROM clienti;

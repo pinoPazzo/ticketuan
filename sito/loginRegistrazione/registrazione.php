@@ -25,7 +25,7 @@ else
                 <div class="row g-0">
                     <div class="card-body p-4 p-lg-5">
 
-                        <form method="post">
+                        <form method="post" action="validazioneRegistrazione.php">
 
                             <div class="d-flex align-items-center mb-3 pb-1">
                                 <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -33,6 +33,12 @@ else
                             </div>
 
                             <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crea il tuo account</h5>
+
+                            <?php if(isset($_GET['errore'])){ ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?= $_GET['errore'] ?>
+                                </div>
+                            <?php } ?>
 
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="email" id="form2Example17" class="form-control form-control-lg"
@@ -129,6 +135,6 @@ else
         </div>
     </div>
 </div>
-<script src="validazioneRegistrazione.js"></script>
+
 </body>
 </html>
