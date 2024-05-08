@@ -18,7 +18,7 @@
                 alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
+              <div class="card-body p-4 p-lg-5">
 
                 <form>
 
