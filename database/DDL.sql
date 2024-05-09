@@ -43,6 +43,18 @@ CREATE TABLE biglietti(
                           FOREIGN KEY (ImportoPagato) REFERENCES eventi(Costo)
 );
 
+DROP TABLE IF EXISTS reclami;
+CREATE TABLE reclami(
+                        IdReclamo int(11)  AUTO_INCREMENT,
+                        Cliente int(11) NOT NULL,
+                        Data Date NOT NULL,
+                        Titolo VARCHAR(40) NOT NULL,
+                        Testo TEXT NOT NULL,
+                        PRIMARY KEY(IdReclamo),
+                        FOREIGN KEY(Cliente) REFERENCES clienti(IdCliente)
+
+);
+
 INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categoria) VALUES ('Marracash', 'Marra Stadi 25', 'Stadio San Siro', 'Milano', '2025-06-25', 59, 'Concerto'),
                                                                                            ('Annalisa', 'Tutti nel Vortice Outdoor', 'Arena del Mare', 'Genova', '2024-07-17 21:30:00', 40, 'Concerto'),
                                                                                            ('Marracash', 'Marra Stadi 25', 'Stadio Diego Armando Maradona', 'Napoli', '2025-06-10 21:00:00', 69, 'Concerto'),

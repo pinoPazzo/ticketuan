@@ -49,7 +49,7 @@ if (isset($_GET['tema'])) {
 
 </head>
 <body class="d-flex flex-column vh-100 ">
-<header class="navbar py-3 d-flex flex-row justify-content-between">ì
+<header class="navbar py-3 d-flex flex-row justify-content-between">
     <a class="navbar-brand ms-2" href="index.php">
         <img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png" width="30" height="30"
              class="d-inline-block align-top"
