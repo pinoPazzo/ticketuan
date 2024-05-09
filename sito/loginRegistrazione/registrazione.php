@@ -39,6 +39,9 @@ else
                                     <?= $_GET['errore'] ?>
                                 </div>
                             <?php } ?>
+                            <div class="alert alert-danger" role="alert" id="allert2">
+                                <p id="error"></p>
+                            </div>
 
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="email" id="form2Example17" class="form-control form-control-lg"
@@ -124,7 +127,7 @@ else
 
                             <div class="pt-1 mb-4">
                                 <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-warning btn-lg btn-block"
-                                        type="submit">registrati
+                                        type="submit">Registrati
                                 </button>
                             </div>
                         </form>
@@ -136,5 +139,6 @@ else
     </div>
 </div>
 
+<script src="validazioneInvioRegistrazione.js"></script>
 </body>
 </html>

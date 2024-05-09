@@ -1,4 +1,9 @@
 <?php
+session_start();
+$isLogged = false;
+if(!empty($_SESSION["username"]))
+    $isLogged = true;
+
 $tema = 'chiaro';
 
 if (isset($_COOKIE['tema'])) {
@@ -44,8 +49,8 @@ if (isset($_GET['tema'])) {
 
 </head>
 <body class="d-flex flex-column vh-100 ">
-<header class="navbar py-3 d-flex flex-row justify-content-between">
-    <a class="navbar-brand ms-2" href="#">
+<header class="navbar py-3 d-flex flex-row justify-content-between">ì
+    <a class="navbar-brand ms-2" href="index.php">
         <img src="https://cdn0.iconfinder.com/data/icons/flat-round-system/512/archlinux-512.png" width="30" height="30"
              class="d-inline-block align-top"
              alt="">
@@ -67,11 +72,36 @@ if (isset($_GET['tema'])) {
             </button>
         </a>';
         }
-        ?>
-        <a class="btn btn-outline-warning ms-3"
+        echo '&nbsp;&nbsp;&nbsp;&nbsp;'; // Spazio
+        if($isLogged){
+            if($tema == 'chiaro'){
+                echo '<a href="userPage.php?tema=chiaro">
+                        <button class="btn btn-primary rounded-3">
+                            <i class="bi bi-person"></i>
+                        </button>
+                    </a>';
+            }else{
+                echo '<a href="userPage.php?tema=scuro">
+                        <button class="btn btn-primary rounded-3">
+                            <i class="bi bi-person-fill"></i>
+                        </button>
+                    </a>';
+            }
+            echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+
+            echo '<a class="btn btn-outline-warning ms-3"
+           href="loginRegistrazione/logout.php">
+            Logout
+        </a>';
+        }
+        else{
+            echo '<a class="btn btn-outline-warning ms-3"
            href="loginRegistrazione/login.php">
             Login
-        </a>
+        </a>';
+        }
+        ?>
+
     </div>
 </header>
 

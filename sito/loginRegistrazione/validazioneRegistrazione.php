@@ -19,10 +19,9 @@ $options = [
 $dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset";
 $pdo = new PDO($dsn, $username, $password, $options);
 
-//_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['citta'])  && isset($_POST['via'])  && isset($_POST['civico'])  && isset($_POST['data'])){
-        /*lo so perfettamente che non c'e' validazione, ne sanificazione dei dati, let me cook*/
 
         $queryEmail = "SELECT Mail FROM clienti WHERE Mail = ?";
         $statementEmail = $pdo->prepare($queryEmail);
