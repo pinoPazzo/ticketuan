@@ -31,7 +31,7 @@ else
                     <div class="col-md-6 col-lg-7 d-flex align-items-center">
                         <div class="card-body p-4 p-lg-5">
 
-                            <form>
+                            <form method="post" action="validazioneLogin.php">
 
                                 <div class="d-flex align-items-center mb-3 pb-1">
                                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -40,15 +40,21 @@ else
 
                                 <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Accedi al tuo account</h5>
 
+                                <?php if(isset($_GET['errore'])){ ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= $_GET['errore'] ?>
+                                    </div>
+                                <?php } ?>
+
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <input type="email" id="form2Example17" class="form-control form-control-lg"
-                                           required/>
+                                           name="email" required/>
                                     <label class="form-label" for="form2Example17">Indirizzo email</label>
                                 </div>
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <input type="password" id="form2Example27" class="form-control form-control-lg"
-                                           required/>
+                                           name="pass" required/>
                                     <label class="form-label" for="form2Example27">Password</label>
                                 </div>
 
