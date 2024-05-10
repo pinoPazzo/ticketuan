@@ -85,6 +85,6 @@ if (!empty($results['NomeEvento'])) {
     }
     echo "</ul>";
 }
-?
+?>
 </body>
 </html>
