@@ -74,13 +74,13 @@ else
     <div class="container justify-content-end w-auto">
         <?php
         if ($tema == 'chiaro') {
-            echo '<a href="index.php?tema=scuro">
+            echo '<a href="?tema=scuro">
             <button class="btn btn-primary rounded-3">
                 <i class="bi bi-moon-stars"></i>
             </button>
         </a>';
         } else {
-            echo '<a href="index.php?tema=chiaro">
+            echo '<a href="?tema=chiaro">
             <button class="btn btn-primary rounded-3">
                 <i class="bi bi-brightness-high"></i>
             </button>
