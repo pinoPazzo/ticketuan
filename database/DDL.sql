@@ -46,19 +46,17 @@ CREATE TABLE biglietti(
 DROP TABLE IF EXISTS reclami;
 CREATE TABLE reclami(
                         IdReclamo int(11)  AUTO_INCREMENT,
-                        Cliente int(11) NOT NULL,
-                        Data Date NOT NULL,
+                        Mail VARCHAR(40) NOT NULL,
+                        Nome VARCHAR(30) NOT NULL,
+                        DataEvento Date NOT NULL,
                         Titolo VARCHAR(40) NOT NULL,
                         Testo TEXT NOT NULL,
-                        PRIMARY KEY(IdReclamo),
-                        FOREIGN KEY(Cliente) REFERENCES clienti(IdCliente)
-
+                        PRIMARY KEY(IdReclamo)
 );
 
 INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categoria) VALUES ('Marracash', 'Marra Stadi 25', 'Stadio San Siro', 'Milano', '2025-06-25', 59, 'Concerto'),
                                                                                            ('Annalisa', 'Tutti nel Vortice Outdoor', 'Arena del Mare', 'Genova', '2024-07-17 21:30:00', 40, 'Concerto'),
-                                                                                           ('Marracash', 'Marra Stadi 25', 'Stadio Diego Armando Maradona', 'Napoli', '2025-06-10 21:00:00', 69, 'Concerto'),
-                                                                                           ('Pinguini Tattici Nucleari', 'Hello Word', 'Ippodromo di Visarno', 'Firenze', '2025-06-25 21:00:00', 49, 'Concerto'),
+                                                                                           ('Marracash', 'Marra Stadi 25', 'Stadio Diego Armando Maradona', 'Napoli', '2025-06-10 21:00:00', 69, 'Concerto'),                                                                               ('Pinguini Tattici Nucleari', 'Hello Word', 'Ippodromo di Visarno', 'Firenze', '2025-06-25 21:00:00', 49, 'Concerto'),
                                                                                            ('Ultimo', 'Stadi 2024', 'Stadio Olimpico', 'Roma', '2024-06-22 21:00:00', 69, 'Concerto'),
                                                                                            ('Roberto Bolle', 'Roberto Bolle and Friends', 'Teatro degli Arcimboldi', 'Milano', '2024-05-24 21:00:00', 33.50, 'Teatro'),
                                                                                            ('Andrea Pucci', 'C\'è sempre qualcosa che non va', 'Palazzo del Turismo', 'Jesolo', '2024-06-15 21:15:00', 54, 'Teatro'),
@@ -67,3 +65,6 @@ INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categor
                                                                                            (NULL, 'Davis Cup', 'Unipol Arena', 'Casalecchio di Reno', '2024-09-10 15:00:00', 44, 'Sport');
 
 SELECT * FROM clienti;
+
+SELECT * FROM reclami;
+

@@ -1,25 +1,13 @@
 <?php
+require_once "../dbConnection.php";
+
 session_start();
 if(!isset($_SESSION['username'])){
     $_SESSION['username'] = null;
 }
 
-$type = 'mysql';
-$server = 'localhost';
-$db = 'ticketuan';
-$port = '3306';
-$charset = 'utf8mb4';
-$username = 'root';
-$password = '';
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-$dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset";
-$pdo = new PDO($dsn, $username, $password, $options);
+$pdo = creatorePdo();
 
-$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['citta'])  && isset($_POST['via'])  && isset($_POST['civico'])  && isset($_POST['data'])){
 
@@ -44,6 +32,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
 }
-header("Location: Registrazione.php?dati mancanti");
+header("Location: Registrazione.php?errore=dati mancanti");
 exit();
 ?>

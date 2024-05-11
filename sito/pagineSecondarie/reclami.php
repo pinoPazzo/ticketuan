@@ -25,7 +25,7 @@ else
                 <div class="row g-0">
                     <div class="card-body p-4 p-lg-5">
 
-                        <form method="post" action="validazioneRegistrazione.php">
+                        <form method="post" action="validazioneReclami.php">
 
                             <div class="d-flex align-items-center mb-3 pb-1">
                                 <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -39,6 +39,9 @@ else
                                     <?= $_GET['errore'] ?>
                                 </div>
                             <?php } ?>
+                            <div class="alert alert-danger" role="alert" id="allert2">
+                                <p id="error"></p>
+                            </div>
 
                             <?php if(isset($_GET['sucesso'])){ ?>
                                 <div class="alert alert-success" role="alert">
@@ -50,6 +53,12 @@ else
                                 <input type="email" id="form2Example17" class="form-control form-control-lg"
                                        name="email" required/>
                                 <label class="form-label" for="form2Example17">Indirizzo email</label>
+                            </div>
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form2Example17" class="form-control form-control-lg" name="nome"
+                                       required/>
+                                <label class="form-label" for="form2Example17">Nome</label>
                             </div>
 
                             <div data-mdb-input-init class="form-outline mb-4">
@@ -65,12 +74,6 @@ else
                             </div>
 
                             <div data-mdb-input-init class="form-outline mb-4">
-                                <input type="text" id="form2Example17" class="form-control form-control-lg" name="nome"
-                                       required/>
-                                <label class="form-label" for="form2Example17">Nome</label>
-                            </div>
-
-                            <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="date" id="form2Example17" class="form-control form-control-lg" name="data"
                                        required/>
                                 <label class="form-label" for="form2Example17">Data di evento</label>
@@ -83,12 +86,20 @@ else
                                 </button>
                             </div>
                         </form>
+                        <div class="pt-1 mb-4">
+                            <a href="../index.php">
+                                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-warning btn-lg btn-block">
+                                    Ritorna alla home
+                                </button>
+                            </a>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="validazioneInvioReclamo.js"></script>
 </body>
 </html>

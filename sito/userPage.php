@@ -1,5 +1,6 @@
 <?php
-require_once "navBarUser.php";
+require_once "navBar.php";
+require_once "dbConnection.php";
 
 if(!isset($_SESSION['username'])){
     $_SESSION['username'] = null;
@@ -7,20 +8,7 @@ if(!isset($_SESSION['username'])){
 
 $email = $_SESSION['username'];
 
-$type = 'mysql';
-$server = 'localhost';
-$db = 'ticketuan';
-$port = '3306';
-$charset = 'utf8mb4';
-$username = 'root';
-$password = '';
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
-$dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset";
-$pdo = new PDO($dsn, $username, $password, $options);
+$pdo= creatorePdo();
 
 $query = "SELECT * FROM clienti where mail = '$email'";
 $statement = $pdo->query($query);
