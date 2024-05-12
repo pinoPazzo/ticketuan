@@ -103,7 +103,7 @@ else
 
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault1"
-                                       id="flexRadioDefault1">
+                                       id="flexRadioDefault1" required>
                                 <label class="form-check-label" for="flexRadioDefault1">Accetto</label>
                                 <input class="form-check-input" type="radio" name="flexRadioDefault1"
                                        id="flexRadioDefault1">
@@ -115,10 +115,12 @@ else
 
                             all'elaborazione da parte di Ticketuan delle mie scelte e abitudini di acquisto sul Sito per
                             l'invio di materiale pubblicitario relativo a prodotti e servizi propri o di terzi di mio
-                            specifico interesse per email, SMS o altri sistemi automatizzati e per posta (profilazione).
+                            specifico interesse per email, o altri sistemi automatizzati e per posta (profilazione)
+                            <a href="../pagineSecondarie/legal/terminiUso.php" class="small text-muted">termini d'uso.</a>
+                            <a href="../pagineSecondarie/legal/privacyPolicy.php" class="small text-muted">Privacy policy</a>.
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault2"
-                                       id="flexRadioDefault1">
+                                       id="flexRadioDefault1" required>
                                 <label class="form-check-label" for="flexRadioDefault1">Accetto</label>
                                 <input class="form-check-input" type="radio" name="flexRadioDefault2"
                                        id="flexRadioDefault1">

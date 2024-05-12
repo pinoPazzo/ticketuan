@@ -5,16 +5,9 @@ allert.style.display = 'none';
 const form = document.querySelector("form");
 
 form.addEventListener("submit",function(e){
-    let pass = form.elements["pass"].value;
+    let pass = form.elements["nuovaPass"].value;
     console.log(pass)
     if (/[A-Z]/.test(pass) && /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pass) && /[a-z]/.test(pass) && pass.length > 7 && /[0-9]/.test(pass)) {
-        let oggi = new Date();
-        let dataInserita = new Date(form.elements["data"].value);
-        if(dataInserita > oggi){
-            allert.style.display = "block";
-            error.innerHTML = "La data inserita è futura"
-            e.preventDefault()
-        }
 
     }else{
         allert.style.display = "block";

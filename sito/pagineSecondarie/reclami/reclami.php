@@ -87,7 +87,7 @@ else
                             </div>
                         </form>
                         <div class="pt-1 mb-4">
-                            <a href="../index.php">
+                            <a href="../../index.php">
                                 <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-warning btn-lg btn-block">
                                     Ritorna alla home
                                 </button>
