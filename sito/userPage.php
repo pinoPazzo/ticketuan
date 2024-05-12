@@ -8,7 +8,6 @@ if(!isset($_SESSION['username'])){
 
 $email = $_SESSION['username'];
 
-$pdo= creatorePdo();
 
 $query = "SELECT * FROM clienti where mail = '$email'";
 $statement = $pdo->query($query);
