@@ -1,6 +1,5 @@
 <?php
-    function creatorePdo()
-    {
+
         $type = 'mysql';
         $server = 'localhost';
         $db = 'ticketuan';
@@ -15,7 +14,7 @@
         ];
         $dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset";
 
-        return  new PDO($dsn, $username, $password, $options);
-    }
+        $pdo =  new PDO($dsn, $username, $password, $options);
+
 
 ?>

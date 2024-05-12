@@ -6,7 +6,6 @@ if(!isset($_SESSION['username'])){
     $_SESSION['username'] = null;
 }
 //T9#abcdef
-$pdo = creatorePdo();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['vecchiaPass']) && isset($_POST['nuovaPass']) ){

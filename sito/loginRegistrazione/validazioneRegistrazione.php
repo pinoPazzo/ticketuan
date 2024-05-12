@@ -6,7 +6,7 @@ if(!isset($_SESSION['username'])){
     $_SESSION['username'] = null;
 }
 
-$pdo = creatorePdo();
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_POST['email']) && isset($_POST['pass']) && isset($_POST['nome']) && isset($_POST['cognome']) && isset($_POST['citta'])  && isset($_POST['via'])  && isset($_POST['civico'])  && isset($_POST['data'])){

@@ -14,7 +14,7 @@
 
 <?php
 // Codice PHP per ottenere i risultati della ricerca
-require_once "dbConnection.php";
+require_once "../../sito/dbConnection.php";
 
 $results = [
     'Artista' => [],

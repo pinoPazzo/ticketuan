@@ -1,7 +1,7 @@
 <?php
-require_once "../dbConnection.php";
+require_once "../../dbConnection.php";
 
-$pdo = creatorePdo();
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
