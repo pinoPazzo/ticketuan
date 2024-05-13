@@ -1,5 +1,4 @@
 <?php
-
         $type = 'mysql';
         $server = 'localhost';
         $db = 'ticketuan';
@@ -13,8 +12,10 @@
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
         $dsn = "$type:host=$server;dbname=$db;port=$port;charset=$charset";
-
-        $pdo =  new PDO($dsn, $username, $password, $options);
-
-
+        $pdo = "";
+        try {
+            $pdo =  new PDO($dsn, $username, $password, $options);
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage());
+        }
 ?>

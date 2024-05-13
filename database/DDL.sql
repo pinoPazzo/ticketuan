@@ -22,6 +22,7 @@ CREATE TABLE eventi(
                        NomeEvento VARCHAR(30) NOT NULL,
                        Localita VARCHAR(50) NOT NULL,
                        Citta VARCHAR(20) NOT NULL,
+                       URL VARCHAR(255),
                        DataOra DATETIME NOT NULL,
                        Costo double NOT NULL,
                        Categoria enum('Concerto', 'Sport', 'Teatro') NOT NULL,
