@@ -10,7 +10,7 @@ CREATE TABLE clienti(
                         Cognome VARCHAR(30) NOT NULL,
                         DataNascita DATE NOT NULL,
                         Residenza VARCHAR(30) NOT NULL,
-                        Mail VARCHAR(40) NOT NULL,
+                        Mail VARCHAR(40) UNIQUE NOT NULL,
                         Password TEXT NOT NULL,
                         PRIMARY KEY (IdCliente)
 );
@@ -68,5 +68,7 @@ INSERT INTO eventi(Artista, NomeEvento, Localita, Citta, DataOra, Costo, Categor
 SELECT * FROM clienti;
 
 SELECT * FROM reclami;
+
+SELECT * FROM biglietti;
 
 

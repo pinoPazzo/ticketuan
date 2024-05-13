@@ -21,6 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $results = $statementEmail -> fetchAll();
             if(password_verify($_POST['pass'], $results[0]["Password"])){
                 $_SESSION['username'] = $_POST['email'];
+                $_SESSION['id'] = $results[0]["IdCliente"];
                 header("Location: ../index.php");
                 exit();
             }
