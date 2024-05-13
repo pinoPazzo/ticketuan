@@ -71,4 +71,3 @@ SELECT * FROM reclami;
 
 SELECT * FROM biglietti;
 
-
