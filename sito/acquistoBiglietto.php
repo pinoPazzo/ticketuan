@@ -24,10 +24,10 @@ if($isLogged){
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                            <span class="h1 fw-bold mb-0">Bentornato</span>
+                                            <span class="h1 fw-bold mb-0">Acquisto</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Accedi al tuo account</h5>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Procedi con il tuo acquisto</h5>
 
                                         <?php if(isset($_GET['errore'])){ ?>
                                             <div class="alert alert-danger" role="alert">
@@ -45,7 +45,7 @@ if($isLogged){
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input type="password" id="form2Example17" class="form-control form-control-lg"
-                                                   name="cvv" required/>
+                                                   name="cvv" pattern="[0-9\s]{3}" required/>
                                             <label class="form-label" for="form2Example17">CVV</label>
                                         </div>
 
