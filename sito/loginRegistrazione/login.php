@@ -37,8 +37,12 @@ else
                                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                                     <span class="h1 fw-bold mb-0">Bentornato</span>
                                 </div>
-
-                                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Accedi al tuo account</h5>
+                                <?php
+                                if(isset($_GET['nonLoggato']))
+                                    echo '<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Per poter fare l'. "'". 'acquisto, è neccesario essere loggati</h5>';
+                                else
+                                    echo '<h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Accedi al tuo account</h5>';
+                                ?>
 
                                 <?php if(isset($_GET['errore'])){ ?>
                                     <div class="alert alert-danger" role="alert">

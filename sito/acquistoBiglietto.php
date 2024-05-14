@@ -23,7 +23,7 @@ if($isLogged){
                                         </div>';
                                     if($result[0]["Artista"] != NULL) {
                                         echo '<div class="d-flex align-items-center mb-3 pb-1">
-                                            <b>Nome evento: </b>‎ ' . $result[0]["Artista"] . '                                   
+                                            <b>Nome artista: </b>‎ ' . $result[0]["Artista"] . '                                   
                                         </div>';
                                     }
                                     echo '<div class="d-flex align-items-center mb-3 pb-1">
@@ -102,17 +102,9 @@ if($isLogged){
     else{
         header("Location: index.php");
     }
-}else{?>
-<div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-            <a href="loginRegistrazione/login.php">
-                <h2 class="text-center">Per acquistare il biglietto serve Loggare, premi qui per farlo direttamente</h2>
-            </a>
-        </div>
-    </div>
-</div>
-<?php } ?>
+}else{
+    header("Location: loginRegistrazione/login.php?nonLoggato");
+} ?>
 <script src="GestioneAcquisto/validazioneBiglietto.js"></script>
 <?php
 require_once "footer.html";
