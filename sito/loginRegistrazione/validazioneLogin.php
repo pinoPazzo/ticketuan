@@ -22,9 +22,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(password_verify($_POST['pass'], $results[0]["Password"])){
                 $_SESSION['username'] = $_POST['email'];
                 $_SESSION['id'] = $results[0]["IdCliente"];
-                //header("Location: ../index.php");
-                //exit();
-                print_r($results[0]);
+                header("Location: ../index.php");
+                exit();
             }
             else{
                 header("Location: login.php?errore=email o/e password errati");
@@ -34,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
     }
-//header("Location: Registrazione.php?dati mancanti");
+header("Location: Registrazione.php?dati mancanti");
 exit();
 }
 
