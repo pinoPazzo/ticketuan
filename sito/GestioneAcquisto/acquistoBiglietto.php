@@ -7,7 +7,8 @@ if($isLogged){
     $result->execute([$_GET["id"]]);
     if ($result->rowCount() > 0){
         $result = $result->fetchAll();
-        print_r($result);?>
+        print_r($result);
+        print_r($_SESSION)?>
         <a class="btn btn-outline-warning  m-auto mb-2" href="../GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>">Conferma Acquisto</a>
     <?php }
     else{
@@ -24,4 +25,3 @@ if($isLogged){
     </div>
 </div>
 <?php }?>
-$_SESSION['username']

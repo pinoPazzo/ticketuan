@@ -65,7 +65,7 @@ else
 <body class="d-flex flex-column vh-100 ">
 <header class="navbar py-3 d-flex flex-row justify-content-between">
     <a class="navbar-brand ms-2" href="index.php">
-        <img src="immagini/image.png" width="30" height="30"
+        <img src="/sito/immagini/image.png" width="30" height="30"
              class="d-inline-block align-top"
              alt="">
         TicketUAN
@@ -89,13 +89,13 @@ else
         echo '&nbsp;&nbsp;&nbsp;&nbsp;'; // Spazio
         if ($isLogged) {
             if ($tema == 'chiaro') {
-                echo '<a href="userPage.php?tema=chiaro">
+                echo '<a href="/sito/userPage.php?tema=chiaro">
                         <button class="btn btn-primary rounded-3">
                             <i class="bi bi-person"></i>
                         </button>
                     </a>';
             } else {
-                echo '<a href="userPage.php?tema=scuro">
+                echo '<a href="/sito/userPage.php?tema=scuro">
                         <button class="btn btn-primary rounded-3">
                             <i class="bi bi-person-fill"></i>
                         </button>
@@ -104,12 +104,12 @@ else
             echo '&nbsp;&nbsp;&nbsp;&nbsp;';
 
             echo '<a class="btn btn-outline-warning ms-3"
-           href="loginRegistrazione/logout.php">
+           href="/sito/loginRegistrazione/logout.php">
             Logout
         </a>';
         } else {
             echo '<a class="btn btn-outline-warning ms-3"
-           href="loginRegistrazione/login.php">
+           href="/sito/loginRegistrazione/login.php">
             Login
         </a>';
         }
