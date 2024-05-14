@@ -6,10 +6,10 @@ if(!isset($_SESSION['username'])){
     $_SESSION['username'] = null;
 }
 
-$email = $_SESSION['username'];
+$idCliente = $_SESSION['id'];
 
 
-$query = "SELECT * FROM clienti where mail = '$email'";
+$query = "SELECT * FROM clienti where IdCliente = '$idCliente'";
 $statement = $pdo->query($query);
 $result = $statement->fetchAll();
 ?>
@@ -51,6 +51,17 @@ $result = $statement->fetchAll();
                             </div>
 
                             <p>PLACE OLDER CRONOLOGIA ACQUISTI</p>
+                            <ul>
+
+                            <?php
+                            $listaBiglietti = $pdo->prepare("Select * From biglietti WHERE IdC = ?");
+                            $listaBiglietti->execute([$idCliente]);
+                            $listaBiglietti = $listaBiglietti->fetchAll();
+                            foreach($listaBiglietti as $biglietti){
+                                echo '<li class="d-flex align-items-center mb-3 pb-1">'.print_r($biglietti).'</li>';
+                            }
+                            ?>
+                            </ul>
 
 
                         </div>

@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(isset($_POST['email']) && isset($_POST['pass']) ){
 
-        $queryEmail = "SELECT Password FROM clienti WHERE Mail = ?";
+        $queryEmail = "SELECT Password,IdCliente FROM clienti WHERE Mail = ?";
         $statementEmail = $pdo->prepare($queryEmail);
         $statementEmail->execute([$_POST['email']]);
         if($statementEmail->rowCount() == 0){
@@ -17,7 +17,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             exit();
         }
         else{
-            $statementEmail->setFetchMode(PDO::FETCH_ASSOC);
             $results = $statementEmail -> fetchAll();
             if(password_verify($_POST['pass'], $results[0]["Password"])){
                 $_SESSION['username'] = $_POST['email'];

@@ -8,7 +8,7 @@ if($isLogged){
     if ($result->rowCount() > 0){
         $result = $result->fetchAll();
         print_r($result);?>
-        <a class="btn btn-outline-warning  m-auto mb-2" href="../GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>">Conferma Acquisto</a>
+        <a class="btn btn-outline-warning  m-auto mb-2" href="../GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">Conferma Acquisto</a>
     <?php }
     else{
         header("Location: index.php");
