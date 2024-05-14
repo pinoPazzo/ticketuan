@@ -7,5 +7,8 @@ if (empty($_SESSION["id"])) {
 }
 $query = "INSERT INTO biglietti(ImportoPagato, Posto, DataAcquisto, IdC, IdE) VALUES (?,?,?,?,?)";
 $result = $pdo->prepare($query);
-$result = $result->execute([$_GET["prezzo"],"0A",date("Y-m-d"),$_SESSION['id'],$_GET['id']]);
+$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$charactersLength = strlen($characters);
+$posto = $characters[random_int(0, $charactersLength - 1)];
+$result = $result->execute([$_GET["prezzo"],rand(0,9).$posto,date("Y-m-d"),$_SESSION['id'],$_GET['id']]);
 header("Location: ../index.php");
