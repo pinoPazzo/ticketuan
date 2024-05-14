@@ -64,7 +64,6 @@ else
                                     </button>
                                 </div>
 
-                                <a class="small text-muted" href="#!">Password dimeticata?</a>
                                 <p class="mb-5 pb-lg-2" style="color: #393f81;">Non hai un account?
                                     <a href="registrazione.php" style="color: #393f81;">Registrati</a></p>
                                 <a href="../pagineSecondarie/legal/terminiUso.php" class="small text-muted">termini d'uso.</a>
