@@ -7,15 +7,38 @@ if($isLogged){
     $result->execute([$_GET["id"]]);
     if ($result->rowCount() > 0){
         $result = $result->fetchAll();
-        print_r($result);?>
+?>
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-xl-10">
                     <div class="card shadow" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="####"
-                                     alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+                                <img src="<?= $result[0]['URL']?>"
+                                     alt="immagine evento" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
+                                <div class="card-body p-4 p-lg-5">
+                                    <?php
+                                    echo '<div class="d-flex align-items-center mb-3 pb-1">
+                                            <b>Nome evento: </b>‎ '. $result[0]["NomeEvento"].'                                   
+                                        </div>';
+                                    if($result[0]["Artista"] != NULL) {
+                                        echo '<div class="d-flex align-items-center mb-3 pb-1">
+                                            <b>Nome evento: </b>‎ ' . $result[0]["Artista"] . '                                   
+                                        </div>';
+                                    }
+                                    echo '<div class="d-flex align-items-center mb-3 pb-1">
+                                            <b>Dove? </b>‎ '. $result[0]["Citta"]. ', ‎'. $result[0]["Localita"]. '                                   
+                                        </div>';
+                                    echo '<div class="d-flex align-items-center mb-3 pb-1">
+                                            <b>Quando? </b>‎ '. $result[0]["DataOra"]. '                                   
+                                        </div>';
+                                    echo '<div class="d-flex align-items-center mb-3 pb-1">
+                                            <b>Costo biglietto: </b>‎ '. $result[0]["Costo"]. ' €'. '                                   
+                                        </div>';
+                                    ?>
+
+                                </div>
+
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5">
@@ -29,11 +52,9 @@ if($isLogged){
 
                                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Procedi con il tuo acquisto</h5>
 
-                                        <?php if(isset($_GET['errore'])){ ?>
-                                            <div class="alert alert-danger" role="alert">
-                                                <?= $_GET['errore'] ?>
-                                            </div>
-                                        <?php } ?>
+                                        <div class="alert alert-danger" role="alert" id="allert2">
+                                            <p id="error"></p>
+                                        </div>
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input id="form2Example17" class="form-control form-control-lg"
@@ -91,7 +112,5 @@ if($isLogged){
         </div>
     </div>
 </div>
-<?php }?>
-$_SESSION['username']
-
-<a class="btn btn-outline-warning  m-auto mb-2" href="GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">Conferma Acquisto</a>
+<?php }
+require_once "footer.html"?>
