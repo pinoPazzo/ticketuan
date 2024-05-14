@@ -14,7 +14,7 @@ if($isLogged){
                     <div class="card shadow" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="<?= $result[0]['URL']?>"
+                                <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                      alt="immagine evento" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
                                 <div class="card-body p-4 p-lg-5">
                                     <?php
@@ -43,7 +43,7 @@ if($isLogged){
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5">
 
-                                    <form method="post" action="GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">
+                                    <form id="formino" method="post" action="GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -112,5 +112,8 @@ if($isLogged){
         </div>
     </div>
 </div>
-<?php }
-require_once "footer.html"?>
+<?php } ?>
+<script src="GestioneAcquisto/validazioneBiglietto.js"></script>
+<?php
+require_once "footer.html";
+?>
