@@ -57,6 +57,12 @@ if($isLogged){
                                         </div>
 
                                         <div data-mdb-input-init class="form-outline mb-4">
+                                            <input type="text" id="form2Example27" class="form-control form-control-lg"
+                                                   name="nome" required/>
+                                            <label class="form-label" for="form2Example27">Nome</label>
+                                        </div>
+                                        
+                                        <div data-mdb-input-init class="form-outline mb-4">
                                             <input id="form2Example17" class="form-control form-control-lg"
                                                    type="tel" inputmode="numeric" pattern="[0-9\s]{16}"
                                                    autocomplete="cc-number" maxlength="19"
@@ -76,11 +82,7 @@ if($isLogged){
                                             <label class="form-label" for="form2Example17">Data di scadenza</label>
                                         </div>
 
-                                        <div data-mdb-input-init class="form-outline mb-4">
-                                            <input type="text" id="form2Example27" class="form-control form-control-lg"
-                                                   name="nome" required/>
-                                            <label class="form-label" for="form2Example27">Nome</label>
-                                        </div>
+
 
                                         <div class="pt-1 mb-4">
                                             <button data-mdb-button-init data-mdb-ripple-init
