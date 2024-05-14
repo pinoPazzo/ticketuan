@@ -58,7 +58,7 @@ if($isLogged){
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input id="form2Example17" class="form-control form-control-lg"
-                                                   type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                                                   type="tel" inputmode="numeric" pattern="[0-9\s]{16}"
                                                    autocomplete="cc-number" maxlength="19"
                                                    placeholder="xxxx xxxx xxxx xxxx" required>
                                             <label class="form-label" for="form2Example17">Numero di carta</label>
