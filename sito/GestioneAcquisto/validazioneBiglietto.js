@@ -5,13 +5,13 @@ console.log("jhkjsdvfghkjgsdfhf")
 const form = document.querySelector('#formino');
 
 form.addEventListener("submit",function(e){
-    e.preventDefault()
+
     console.log(form.elements["data"].value)
     let oggi = new Date();
     let dataInserita = new Date(form.elements["data"].value);
     if(dataInserita < oggi){
         allert.style.display = "block";
         error.innerHTML = "La carta è scaduta"
-
+        e.preventDefault()
     }
 });

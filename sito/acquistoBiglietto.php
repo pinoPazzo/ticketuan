@@ -61,14 +61,23 @@ if($isLogged){
                                                    name="nome" required/>
                                             <label class="form-label" for="form2Example27">Nome</label>
                                         </div>
-                                        
+
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input id="form2Example17" class="form-control form-control-lg"
-                                                   type="tel" inputmode="numeric" pattern="[0-9\s]{16}"
+                                                   type="tel" inputmode="numeric" pattern="[0-9\s][-]{20}"
                                                    autocomplete="cc-number" maxlength="19"
                                                    placeholder="xxxx xxxx xxxx xxxx" required>
                                             <label class="form-label" for="form2Example17">Numero di carta</label>
                                         </div>
+
+                                        <script>
+                                            document.getElementById('form2Example17').addEventListener('input', function (e) {
+                                                let input = e.target.value.replace(/\D/g, ''); // Rimuove tutti i non numerici
+                                                let formattedInput = input.replace(/(\d{4})/g, '$1-'); // Aggiunge un trattino dopo ogni 4 caratteri
+                                                formattedInput = formattedInput.trim().slice(0, 19); // Rimuove eventuali spazi e taglia la lunghezza a 19 caratteri
+                                                e.target.value = formattedInput;
+                                            });
+                                        </script>
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input type="password" id="form2Example17" class="form-control form-control-lg"
