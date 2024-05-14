@@ -28,7 +28,7 @@ foreach ($result as $row) {
                              src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                              alt="puzzo">
                     </div>
-                    <a class="btn btn-outline-warning h-25 m-auto mb-2"  href="GestioneAcquisto/acquistoBiglietto.php?id=<?=$item["IdEvento"];?>" >Acquista</a>
+                    <a class="btn btn-outline-warning h-25 m-auto mb-2"  href="acquistoBiglietto.php?id=<?=$item["IdEvento"];?>" >Acquista</a>
                 </div>
                 <?php }   ?>
             </div>
