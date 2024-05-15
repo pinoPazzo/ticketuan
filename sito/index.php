@@ -25,7 +25,7 @@ foreach ($result as $row) {
                 <div class="card d-flex flex-column justify-content-center ">
                     <div class="card-body">
                         <img class="card-img-top h-25"
-                             src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                             src="<?=$item["URL"]?>"
                              alt="puzzo">
                     </div>
                     <a class="btn btn-outline-warning h-25 m-auto mb-2"  href="acquistoBiglietto.php?id=<?=$item["IdEvento"];?>" >Acquista</a>
