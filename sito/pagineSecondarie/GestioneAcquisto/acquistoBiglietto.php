@@ -132,6 +132,6 @@ else{
 } ?>
 <script src="validazioneBiglietto.js"></script>
 <?php
-require_once "../../footer.html";
+require_once "../footerPagineSecondarie.html";
 ?>
 

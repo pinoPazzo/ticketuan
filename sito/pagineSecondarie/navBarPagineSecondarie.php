@@ -25,7 +25,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicketUAN</title>
-    <link rel="icon" type="image/x-icon" href="../immagini/image.png">
+    <link rel="icon" type="image/x-icon" href="/sito/immagini/image.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -65,7 +65,7 @@ else
 <body class="d-flex flex-column vh-100 ">
 <header class="navbar py-3 d-flex flex-row justify-content-between">
     <a class="navbar-brand ms-2" href="../../index.php">
-        <img src="/sito/immagini/image.png" width="30" height="30"
+        <img src="../../immagini/image.png" width="30" height="30"
              class="d-inline-block align-top"
              alt="">
         TicketUAN
