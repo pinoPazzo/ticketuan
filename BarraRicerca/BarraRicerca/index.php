@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risultati della Ricerca</title>
+    <script>
+        function validateSearch() {
+            const searchInput = document.getElementById('search').value;
+            const submitButton = document.getElementById('searchButton');
+            if (searchInput.length < 2) {
+                submitButton.disabled = true;
+            } else {
+                submitButton.disabled = false;
+            }
+        }
+    </script>
 </head>
 <body>
-<form method="GET" action="">
+<form method="GET" action="" onsubmit="return validateSearch();">
     <label for="search">Cerca:</label>
-    <input type="text" id="search" name="search">
-    <button type="submit">Cerca</button>
+    <input type="text" id="search" name="search" oninput="validateSearch();">
+    <button type="submit" id="searchButton" disabled>Cerca</button>
 </form>
 
 <?php
@@ -26,23 +37,25 @@ if (!empty($pdo)) {
 
         $search = htmlspecialchars($_GET['search']);
 
-        $str = "SELECT * FROM eventi WHERE Artista LIKE :artista
-                    OR NomeEvento LIKE :nomeEvento;";
+        if (strlen($search) >= 2) {
+            $str = "SELECT * FROM eventi WHERE Artista LIKE :artista
+                        OR NomeEvento LIKE :nomeEvento;";
 
-        $statement = $pdo->prepare($str);
+            $statement = $pdo->prepare($str);
 
-        $searchParam = '%' . $search . '%';
-        $statement->bindParam(':artista', $searchParam);
-        $statement->bindParam(':nomeEvento', $searchParam);
+            $searchParam = '%' . $search . '%';
+            $statement->bindParam(':artista', $searchParam, PDO::PARAM_STR);
+            $statement->bindParam(':nomeEvento', $searchParam, PDO::PARAM_STR);
 
-        $statement->execute();
+            $statement->execute();
 
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            if (!empty($row['Artista'])) {
-                $results['Artista'][] = $row['Artista'];
-            }
-            if (!empty($row['NomeEvento'])) {
-                $results['NomeEvento'][] = $row['NomeEvento'];
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                if (!empty($row['Artista'])) {
+                    $results['Artista'][] = $row['Artista'];
+                }
+                if (!empty($row['NomeEvento'])) {
+                    $results['NomeEvento'][] = $row['NomeEvento'];
+                }
             }
         }
 
@@ -62,6 +75,10 @@ if (!empty($pdo)) {
             }
         }
     }
+
+    // Remove duplicates
+    $results['Artista'] = array_unique($results['Artista']);
+    $results['NomeEvento'] = array_unique($results['NomeEvento']);
 }
 ?>
 
