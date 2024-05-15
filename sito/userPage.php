@@ -61,7 +61,13 @@ $result = $statement->fetchAll();
                             foreach($listaBiglietti as $biglietti){?>
                                 <li class="card mb-4">
                                     <h3 class="card-header">
-                                        <?= $biglietti["NomeEvento"] . ' ('.$biglietti["Artista"].')'?>
+                                        <?php
+                                        $s = $biglietti["NomeEvento"];
+                                        if(!empty($biglietti["Artista"])){
+                                           $s .= '('.$biglietti["Artista"].')';
+                                        }
+                                        echo $s;
+                                        ?>
                                     </h3>
                                     <div class="card-body">
                                         <blockquote class="blockquote mb-0">
