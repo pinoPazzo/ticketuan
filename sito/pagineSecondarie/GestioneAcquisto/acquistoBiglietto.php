@@ -103,8 +103,8 @@ $result = $result->fetchAll();
 
 
                                 <div data-mdb-input-init class="form-outline mb-4">
-                                    <input type="text" id="expiry-date" class="form-control form-control-lg"
-                                           name="data" placeholder="MM-YYYY" required maxlength="7"/>
+                                    <input type="month" id="expiry-date" class="form-control form-control-lg"
+                                           name="data" required maxlength="7"/>
                                     <label class="form-label" for="expiry-date">Data di scadenza</label>
                                 </div>
 
