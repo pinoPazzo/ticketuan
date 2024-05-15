@@ -38,16 +38,21 @@ if (!empty($pdo)) {
         $search = htmlspecialchars($_GET['search']);
 
         if (strlen($search) >= 2) {
-            $str = "SELECT * FROM eventi WHERE Artista LIKE :artista
-                        OR NomeEvento LIKE :nomeEvento;";
+            $str = "SELECT * FROM eventi WHERE Artista LIKE :searchArtista
+            OR NomeEvento LIKE :searchEvento
+            OR Citta LIKE :searchCitta
+            OR Localita LIKE :searchLocalita;";
 
             $statement = $pdo->prepare($str);
 
             $searchParam = '%' . $search . '%';
-            $statement->bindParam(':artista', $searchParam, PDO::PARAM_STR);
-            $statement->bindParam(':nomeEvento', $searchParam, PDO::PARAM_STR);
+            $statement->bindParam(':searchArtista', $searchParam, PDO::PARAM_STR);
+            $statement->bindParam(':searchEvento', $searchParam, PDO::PARAM_STR);
+            $statement->bindParam(':searchCitta', $searchParam, PDO::PARAM_STR);
+            $statement->bindParam(':searchLocalita', $searchParam, PDO::PARAM_STR);
 
             $statement->execute();
+
 
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 if (!empty($row['Artista'])) {
