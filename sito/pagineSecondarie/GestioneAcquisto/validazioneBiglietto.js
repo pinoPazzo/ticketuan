@@ -13,4 +13,9 @@ form.addEventListener("submit",function(e){
         error.innerHTML = "La carta è scaduta"
         e.preventDefault()
     }
+    if(form.elements["cvv"].value.length === 3){
+        allert.style.display = "block";
+        error.innerHTML = "CVV non valido"
+        e.preventDefault()
+    }
 });

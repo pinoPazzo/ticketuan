@@ -86,22 +86,6 @@ $result = $result->fetchAll();
                                     <label class="form-label" for="form2Example18">CVV</label>
                                 </div>
 
-                                <script>
-                                    document.getElementById('form2Example18').addEventListener('input', function (e) {
-                                        let input = e.target.value.replace(/\D/g, '');
-                                        input = input.slice(0, 3);
-                                        e.target.value = input;
-
-                                        let button = document.querySelector('button[type="submit"]');
-                                        if (input.length === 3) {
-                                            button.disabled = false;
-                                        } else {
-                                            button.disabled = true;
-                                        }
-                                    });
-                                </script>
-
-
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <input type="month" id="expiry-date" class="form-control form-control-lg"
                                            name="data" required maxlength="7"/>
