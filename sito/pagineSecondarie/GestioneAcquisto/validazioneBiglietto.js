@@ -1,7 +1,6 @@
 let allert = document.querySelector('#allert2');
 let error = document.querySelector('#error')
 allert.style.display = 'none';
-console.log("jhkjsdvfghkjgsdfhf")
 const form = document.querySelector('#formino');
 
 form.addEventListener("submit",function(e){
