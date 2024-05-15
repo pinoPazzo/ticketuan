@@ -53,7 +53,6 @@ if (!empty($pdo)) {
 
             $statement->execute();
 
-
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                 if (!empty($row['Artista'])) {
                     $results['Artista'][] = $row['Artista'];
