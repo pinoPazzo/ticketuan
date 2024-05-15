@@ -13,7 +13,7 @@ $query = "SELECT * FROM clienti where IdCliente = '$idCliente'";
 $statement = $pdo->query($query);
 $result = $statement->fetchAll();
 ?>
-    <div class="container py-5 h-100">
+    <div class="container py-5 flex-grow-1"  >
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
                 <div class="card shadow" style="border-radius: 1rem;">
@@ -50,16 +50,26 @@ $result = $statement->fetchAll();
                                 <a href="pagineSecondarie/eliminazione/elimina.php" class="btn btn-outline-warning ms-3">Elimina Account</a>
                             </div>
 
-                            <p>PLACE OLDER CRONOLOGIA ACQUISTI</p>
+                            <p>CRONOLOGIA ACQUISTI</p>
                             <ul>
 
                             <?php
-                            $listaBiglietti = $pdo->prepare("Select * From biglietti WHERE IdC = ?");
+                            $listaBiglietti = $pdo->prepare("SELECT * FROM biglietti JOIN eventi e on e.IdEvento = biglietti.IdE WHERE IdC = ?");
                             $listaBiglietti->execute([$idCliente]);
                             $listaBiglietti = $listaBiglietti->fetchAll();
-                            foreach($listaBiglietti as $biglietti){
-                                echo '<li class="d-flex align-items-center mb-3 pb-1">'.print_r($biglietti).'</li>';
-                            }
+
+                            foreach($listaBiglietti as $biglietti){?>
+                                <li class="card">
+                                    <h3 class="card-header">
+                                        <?= $biglietti["NomeEvento"] . ' ('.$biglietti["Artista"].')'?>
+                                    </h3>
+                                    <div class="card-body">
+                                        <blockquote class="blockquote mb-0">
+                                            <p>Posto:<?=$biglietti["Posto"]?>, Costo:<?=$biglietti["Costo"]?>€, Data:<?=$biglietti["DataOra"]?></p>
+                                        </blockquote>
+                                    </div>
+                                </li>
+                            <?php }
                             ?>
                             </ul>
 

@@ -18,7 +18,7 @@ else
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<div class="container py-5 h-100">
+<div class="container py-5 flex-grow-1">
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
             <div class="card shadow" style="border-radius: 1rem;">

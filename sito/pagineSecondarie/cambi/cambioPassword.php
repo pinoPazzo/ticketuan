@@ -1,7 +1,7 @@
 <?php
 require_once "../navBarPagineSecondarie.php";
 ?>
-    <div class="container py-5 h-100">
+    <div class="container py-5 flex-grow-1">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-xl-10">
                 <div class="card shadow" style="border-radius: 1rem;">
