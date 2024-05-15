@@ -11,7 +11,7 @@ if (isset($_COOKIE['tema'])) {
 }
 
 if (isset($_GET['tema'])) {
-    setcookie('tema', $_GET['tema'], time() + (365 * 24 * 60 * 60));
+    setcookie('tema', $_GET['tema'], time() + (365 * 24 * 60 * 60), '/', 'localhost');
     $tema = $_GET['tema'];
 }
 ?>
@@ -26,6 +26,7 @@ else
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicketUAN</title>
+    <link rel="icon" type="image/x-icon" href="/sito/immagini/image.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -71,20 +72,38 @@ else
         TicketUAN
     </a>
     <div class="flex-grow-1"></div>
-    <div class="container justify-content-end w-auto">
+    <form class="me-3 mt-1 mb-1" role="search" method="GET" action="" onsubmit="return validateSearch();">
+        <input class="form-control" type="search" id="search" name="search" placeholder="Cerca" aria-label="Cerca" oninput="validateSearch();">
+    </form>
         <?php
         if ($tema == 'chiaro') {
-            echo '<a href="?tema=scuro">
+            $s = '<a href="?tema=scuro';
+            $s1 = '';
+            foreach ($_GET as $key => $value) {
+                if ($key != 'tema') {
+                    $s1 = '&'.$key.'='.$value;
+                }
+            }
+            $s2= '"
             <button class="btn btn-primary rounded-3">
                 <i class="bi bi-moon-stars"></i>
             </button>
         </a>';
+            echo $s.$s1.$s2;
         } else {
-            echo '<a href="?tema=chiaro">
+            $s = '<a href="?tema=chiaro';
+            $s1 = '';
+            foreach ($_GET as $key => $value) {
+                if ($key != 'tema') {
+                    $s1 = '&'.$key.'='.$value;
+                }
+            }
+            $s2= '"
             <button class="btn btn-primary rounded-3">
-                <i class="bi bi-brightness-high"></i>
+                <i class="bi bi-moon-stars"></i>
             </button>
         </a>';
+            echo $s.$s1.$s2;
         }
         echo '&nbsp;&nbsp;&nbsp;&nbsp;'; // Spazio
         if ($isLogged) {
@@ -103,18 +122,18 @@ else
             }
             echo '&nbsp;&nbsp;&nbsp;&nbsp;';
 
-            echo '<a class="btn btn-outline-warning ms-3"
+            echo '<a class="btn btn-outline-warning me-3"
            href="loginRegistrazione/logout.php">
             Logout
         </a>';
         } else {
-            echo '<a class="btn btn-outline-warning ms-3"
+            echo '<a class="btn btn-outline-warning me-3"
            href="loginRegistrazione/login.php">
             Login
         </a>';
         }
         ?>
 
-    </div>
+
 </header>
 

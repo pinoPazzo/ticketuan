@@ -80,7 +80,6 @@ if (!empty($pdo)) {
         }
     }
 
-    // Remove duplicates
     $results['Artista'] = array_unique($results['Artista']);
     $results['NomeEvento'] = array_unique($results['NomeEvento']);
 }

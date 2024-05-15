@@ -1,6 +1,7 @@
 <?php
-require_once "navBar.php";
-require_once "dbConnection.php";
+require_once "../navBarPagineSecondarie.php";
+require_once "../../dbConnection.php";
+
 if($isLogged){
     $query = "SELECT * FROM eventi WHERE IdEvento = ?";
     $result = $pdo->prepare($query);
@@ -14,7 +15,7 @@ if($isLogged){
                     <div class="card shadow" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                <img src="<?=$result[0]["URL"]?>"
                                      alt="immagine evento" class="img-fluid" style="border-radius: 1rem 0 0 1rem;"/>
                                 <div class="card-body p-4 p-lg-5">
                                     <?php
@@ -43,7 +44,7 @@ if($isLogged){
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5">
 
-                                    <form id="formino" method="post" action="GestioneAcquisto/confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">
+                                    <form id="formino" method="post" action="confermaBiglietto.php?id=<?=$_GET["id"]?>&prezzo=<?=$result[0]["Costo"]?>">
 
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -111,12 +112,12 @@ if($isLogged){
         </div>
     <?php }
     else{
-        header("Location: index.php");
+        header("Location: ../../index.php");
     }
 }else{
-    header("Location: loginRegistrazione/login.php?nonLoggato");
+    header("Location: ../../loginRegistrazione/login.php?nonLoggato");
 } ?>
-<script src="GestioneAcquisto/validazioneBiglietto.js"></script>
+<script src="validazioneBiglietto.js"></script>
 <?php
-require_once "footer.html";
+require_once "../../footer.html";
 ?>
