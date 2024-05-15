@@ -26,8 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $statementInsertCliente = $pdo->prepare($insertCliente);
             $statementInsertCliente->execute(array($_POST['nome'], $_POST['cognome'], $_POST['data'], $residenza, $_POST['email'], $passwordHash));
 
-            $_SESSION['username'] = $_POST['email'];
-            header("Location: ../index.php");
+            header("Location: login.php");
             exit();
         }
     }
