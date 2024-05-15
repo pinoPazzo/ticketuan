@@ -59,7 +59,7 @@ $result = $statement->fetchAll();
                             $listaBiglietti = $listaBiglietti->fetchAll();
 
                             foreach($listaBiglietti as $biglietti){?>
-                                <li class="card">
+                                <li class="card mb-4">
                                     <h3 class="card-header">
                                         <?= $biglietti["NomeEvento"] . ' ('.$biglietti["Artista"].')'?>
                                     </h3>

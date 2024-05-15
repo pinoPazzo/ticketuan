@@ -24,7 +24,7 @@ if (!empty($_GET['search'])) {
             $fallimento = false; ?>
             <main class="row row-cols-1 row-cols-md-3 g-4 flex-grow-1 m-2">
                 <?php while ($row = $statement->fetch(PDO::FETCH_ASSOC)) { ?>
-                    <div class="col " style="width: fit-content; height: fit-content" >
+                    <div class="col" style="width: fit-content; height: fit-content" >
                         <div class="card d-flex flex-column justify-content-center" style="width: fit-content">
                             <img class="card-img-top"
                                  src="<?= $row["URL"] ?>"
