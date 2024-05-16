@@ -25,8 +25,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $insertCliente = "insert into clienti(nome, cognome, datanascita, residenza, mail, password) values (?, ?, ?, ?, ?, ?)";
             $statementInsertCliente = $pdo->prepare($insertCliente);
             $statementInsertCliente->execute(array($_POST['nome'], $_POST['cognome'], $_POST['data'], $residenza, $_POST['email'], $passwordHash));
+            $queryEmail = "SELECT Password,IdCliente FROM clienti WHERE Mail = ?";
+            $statementEmail = $pdo->prepare($queryEmail);
+            $statementEmail->execute([$_POST['email']]);
+            $results = $statementEmail -> fetchAll();
+            $_SESSION['id'] = $results[0]["IdCliente"];
+            $_SESSION['username'] = $_POST['email'];
 
-            header("Location: login.php");
+            header("Location: ../index.php");
             exit();
         }
     }
