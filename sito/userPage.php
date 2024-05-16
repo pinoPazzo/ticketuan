@@ -25,18 +25,18 @@ $result = $statement->fetchAll();
                             </div>
 
                             <div class="d-flex align-items-center mb-3 pb-1">
-                                <p>indirizzo email: <?= $_SESSION['username'] ?></p>
+                                <p>Indirizzo email: <?= $_SESSION['username'] ?></p>
                             </div>
 
                             <div class="d-flex align-items-center">
-                                <p>residenza:</p>
+                                <p>Residenza:</p>
                             </div>
                             <?php
                             $residenza = explode(";", $result[0]['Residenza']);
                             ?>
                             <div class="d-flex align-items-center">
                                 <ul>
-                                    <li>Via <?= $residenza[0]?>, <?= $residenza[1]?></li>
+                                    <li><?= $residenza[0]?>, <?= $residenza[1]?></li>
                                     <li><?= $residenza[2]?></li>
                                 </ul>
                             </div>
@@ -53,30 +53,30 @@ $result = $statement->fetchAll();
                             <p>CRONOLOGIA ACQUISTI</p>
                             <ul>
 
-                            <?php
-                            $listaBiglietti = $pdo->prepare("SELECT * FROM biglietti JOIN eventi e on e.IdEvento = biglietti.IdE WHERE IdC = ?");
-                            $listaBiglietti->execute([$idCliente]);
-                            $listaBiglietti = $listaBiglietti->fetchAll();
+                                <?php
+                                $listaBiglietti = $pdo->prepare("SELECT * FROM biglietti JOIN eventi e on e.IdEvento = biglietti.IdE WHERE IdC = ?");
+                                $listaBiglietti->execute([$idCliente]);
+                                $listaBiglietti = $listaBiglietti->fetchAll();
 
-                            foreach($listaBiglietti as $biglietti){?>
-                                <li class="card mb-4">
-                                    <h3 class="card-header">
-                                        <?php
-                                        $s = $biglietti["NomeEvento"];
-                                        if(!empty($biglietti["Artista"])){
-                                           $s .= '('.$biglietti["Artista"].')';
-                                        }
-                                        echo $s;
-                                        ?>
-                                    </h3>
-                                    <div class="card-body">
-                                        <blockquote class="blockquote mb-0">
-                                            <p>Posto:<?=$biglietti["Posto"]?>, Costo:<?=$biglietti["Costo"]?>€, Data:<?=$biglietti["DataOra"]?></p>
-                                        </blockquote>
-                                    </div>
-                                </li>
-                            <?php }
-                            ?>
+                                foreach($listaBiglietti as $biglietti){?>
+                                    <li class="card mb-4">
+                                        <h3 class="card-header">
+                                            <?php
+                                            $s = $biglietti["NomeEvento"];
+                                            if(!empty($biglietti["Artista"])){
+                                                $s .= ' - '.$biglietti["Artista"];
+                                            }
+                                            echo $s;
+                                            ?>
+                                        </h3>
+                                        <div class="card-body">
+                                            <blockquote class="blockquote mb-0">
+                                                <p>Posto: <?=$biglietti["Posto"]?> <br>Costo: €<?=$biglietti["Costo"]?> <br>Data e Ora: <?=$biglietti["DataOra"]?></p>
+                                            </blockquote>
+                                        </div>
+                                    </li>
+                                <?php }
+                                ?>
                             </ul>
 
 

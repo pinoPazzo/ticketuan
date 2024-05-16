@@ -29,7 +29,7 @@ if (!empty($_GET['search'])) {
                             <img class="card-img-top"
                                  src="<?= $row["URL"] ?>"
                                  alt="puzzo"
-                                >
+                            >
                             <a class="btn btn-outline-warning h-25 m-auto mb-2 mt-2"
                                href="pagineSecondarie/GestioneAcquisto/acquistoBiglietto.php?id=<?= $row["IdEvento"]; ?>">Acquista</a>
                         </div>

@@ -73,12 +73,20 @@ $result = $result->fetchAll();
 
                                 <script>
                                     document.getElementById('form2Example17').addEventListener('input', function (e) {
-                                        let input = e.target.value.replace(/\D/g, '');
-                                        let formattedInput = input.replace(/(\d{4})/g, '$1-');
-                                        formattedInput = formattedInput.trim().slice(0, 19);
+                                        let input = e.target.value.replace(/\D/g, ''); // Rimuove tutti i non numerici
+                                        let formattedInput = input.replace(/(\d{4})/g, '$1-'); // Aggiunge un trattino dopo ogni 4 caratteri
+                                        formattedInput = formattedInput.trim().slice(0, 19); // Rimuove eventuali spazi e taglia la lunghezza a 19 caratteri
                                         e.target.value = formattedInput;
+
+                                        let button = document.querySelector('button[type="submit"]');
+                                        if (formattedInput.length === 19) {
+                                            button.disabled = false;
+                                        } else {
+                                            button.disabled = true;
+                                        }
                                     });
                                 </script>
+
 
                                 <div data-mdb-input-init class="form-outline mb-4">
                                     <input type="password" id="form2Example18" class="form-control form-control-lg"
