@@ -71,15 +71,6 @@ if($isLogged){
                                             <label class="form-label" for="form2Example17">Numero di carta</label>
                                         </div>
 
-                                        <script>
-                                            document.getElementById('form2Example17').addEventListener('input', function (e) {
-                                                let input = e.target.value.replace(/\D/g, ''); // Rimuove tutti i non numerici
-                                                let formattedInput = input.replace(/(\d{4})/g, '$1-'); // Aggiunge un trattino dopo ogni 4 caratteri
-                                                formattedInput = formattedInput.trim().slice(0, 19); // Rimuove eventuali spazi e taglia la lunghezza a 19 caratteri
-                                                e.target.value = formattedInput;
-                                            });
-                                        </script>
-
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input type="password" id="form2Example18" class="form-control form-control-lg"
                                                    name="cvv" pattern="[0-9\s]{3}" required/>
@@ -88,7 +79,7 @@ if($isLogged){
 
                                         <div data-mdb-input-init class="form-outline mb-4">
                                             <input type="text" id="expiry-date" class="form-control form-control-lg"
-                                                   name="data" placeholder="MM-YYYY" required maxlength="7"/>
+                                                   name="data" placeholder="MM/YYYY" required maxlength="7"/>
                                             <label class="form-label" for="expiry-date">Data di scadenza</label>
                                         </div>
 
